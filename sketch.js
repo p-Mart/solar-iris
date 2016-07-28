@@ -1,14 +1,6 @@
-//dweaver_nought - 2016
-//Simulation of the solar system
+//Phillip Martin - May 2016
+//2D real-time Simulation of the solar system
 
-/*
-Todo:
-
-*Fix time display to have a constant size
-*Button functionality
-*General code optimizations / cleaning up
-
-*/
 
 var myFont;
 var mouseoffset_x;
@@ -335,6 +327,7 @@ function setup() {
   saturn = new Planet(saturn_N,saturn_i,saturn_w,saturn_a,saturn_e,saturn_M,'#FFEC9F');
   uranus = new Planet(uranus_N,uranus_i,uranus_w,uranus_a,uranus_e,uranus_M,'#84F9FF');
   neptune = new Planet(neptune_N,neptune_i,neptune_w,neptune_a,neptune_e,neptune_M,'#0269FF');
+  //Pluto is broken, probably because the calculations for its orbit aren't accurate enough
   pluto = new Pluto(pluto_N,pluto_i,pluto_w,pluto_a,pluto_e,pluto_M,'#FFCCFF',pluto_P);
   
 }
@@ -344,7 +337,7 @@ function draw() {
 
   smooth();
 
-  
+  //Pan the screen.
   if(mouseIsPressed){
     if(hasClicked === false){
       hasClicked = true;
@@ -380,6 +373,7 @@ function draw() {
 		noStroke();
 		ellipse(windowWidth/2 + offset_x,windowHeight/2+offset_y,20,20); 
 		
+		//The planets
 		fill(mercury.planet_color);
 		ellipse(windowWidth/2 + offset_x + mercury.xPosition(), windowHeight/2 + offset_y + mercury.yPosition(),10,10);
 		fill(venus.planet_color);
