@@ -244,7 +244,7 @@ var pluto_M;
 
 
 function preload(){
-    myFont = loadFont('assets/radiospace.ttf');
+    myFont = loadFont('radiospace.ttf');
 }
 
 function setup() {
